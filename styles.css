@@ -1,0 +1,15 @@
+.sketch-grid {
+  height: 50vh;
+  width: 50vh;
+  display: grid;
+  grid-template-columns: repeat(16, auto);
+  grid-template-rows: repeat(16, auto);
+}
+
+.sketch-grid__square {
+  border: solid 1px red;
+}
+
+.sketch-grid__square--painted {
+  background-color: black;
+}
