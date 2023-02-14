@@ -1,0 +1,25 @@
+{
+  "name": "odin-etch-a-sketch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "css": "node-sass --include-path scss styles.scss styles.css",
+    "watch": "nodemon -e scss -x 'npm run css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monalisanpereira/odin-etch-a-sketch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monalisanpereira/odin-etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/monalisanpereira/odin-etch-a-sketch#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
