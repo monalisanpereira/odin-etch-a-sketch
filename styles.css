@@ -1,3 +1,25 @@
+/* ---------- CUSTOM PROPERTIES ---------- */
+
+body {
+  --text-color: #d1d1d1;
+  --background-color: #242424;
+  --grid-color: #e7e7e7;
+}
+
+/* ---------- GLOBAL RULES ---------- */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  height: 100vh;
+}
+
 .sketch-grid {
   height: 50vh;
   width: 50vh;
@@ -7,7 +29,8 @@
 }
 
 .sketch-grid__square {
-  border: solid 1px red;
+  border: solid 1px rgb(65, 65, 65);
+  background-color: var(--grid-color);
 }
 
 .sketch-grid__square--painted {
