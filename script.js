@@ -1,6 +1,9 @@
 // ---------- VARIABLES AND ELEMENTS ----------
 
+let pencilMode = 'pencil';
 const sketchGrid = document.getElementById('sketch-grid');
+const pencilButton = document.getElementById('control-bar__pencil-button');
+const eraserButton = document.getElementById('control-bar__eraser-button');
 const clearButton = document.getElementById('control-bar__clear-button');
 
 // ---------- FUNCTIONS ----------
@@ -17,6 +20,10 @@ function paintSquare() {
   this.classList.add("sketch-grid__square--painted");
 }
 
+function changeMode(mode) {
+  pencilMode = mode;
+}
+
 function clearGrid() {
   for (let i = 0; i < gridSquareList.length; i++) {
     gridSquareList[i].classList.remove("sketch-grid__square--painted");
@@ -31,12 +38,18 @@ generateGrid();
 
 const gridSquareList = document.querySelectorAll('.sketch-grid__square');
 
-// ---------- EVENT LISTENER ----------
+// ---------- EVENT LISTENERS ----------
 
 for (let i = 0; i < gridSquareList.length; i++) {
   gridSquareList[i].addEventListener('mouseover', ()=>{
-    gridSquareList[i].classList.add("sketch-grid__square--painted")
+    if (pencilMode == 'pencil') {
+      gridSquareList[i].classList.add("sketch-grid__square--painted");
+    } else if (pencilMode == 'eraser') {
+      gridSquareList[i].classList.remove("sketch-grid__square--painted");
+    };
   });
 };
 
+pencilButton.addEventListener('click', changeMode.bind(this, 'pencil'));
+eraserButton.addEventListener('click', changeMode.bind(this, 'eraser'));
 clearButton.addEventListener('click', clearGrid);
