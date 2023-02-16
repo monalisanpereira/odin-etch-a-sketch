@@ -6,23 +6,28 @@
   user-select: none;
   padding: 0;
   margin: 0;
-  border: solid 1px red; }
+  box-sizing: border-box; }
+
+html {
+  height: 100vh; }
 
 body {
   font-family: sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  height: 100vh; }
+  color: #d1d1d1;
+  background-color: #242424; }
 
 .body-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 /* ---------- TITLE ---------- */
 .header {
-  margin: 30px 0;
-  font-size: 36px; }
+  text-align: center;
+  margin: 30px 0; }
+  .header__title {
+    font-size: 48px; }
 
 /* ---------- MAIN CONTENT ---------- */
 .main-content {
@@ -36,44 +41,54 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 50vh; }
   .control-bar__slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    /* Full-width */
-    height: 25px;
-    /* Specified height */
-    background: #d3d3d3;
-    /* Grey background */
-    outline: none;
-    /* Remove outline */
-    opacity: 0.7;
-    /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s;
-    /* 0.2 seconds transition on hover */
-    transition: opacity .2s; }
+    width: 150px;
+    height: 1px;
+    background: #d3d3d3; }
     .control-bar__slider::-webkit-slider-thumb {
       -webkit-appearance: none;
-      /* Override default look */
       appearance: none;
-      width: 25px;
-      /* Set a specific slider handle width */
-      height: 25px;
-      /* Slider handle height */
-      background: #04AA6D;
-      /* Green background */
-      cursor: pointer;
-      /* Cursor on hover */ }
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background: #e7e7e7;
+      cursor: pointer; }
     .control-bar__slider::-moz-range-thumb {
-      width: 25px;
-      /* Set a specific slider handle width */
-      height: 25px;
-      /* Slider handle height */
-      background: #04AA6D;
-      /* Green background */
-      cursor: pointer;
-      /* Cursor on hover */ }
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background: #e7e7e7;
+      cursor: pointer; }
+  .control-bar__colorpicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer; }
+    .control-bar__colorpicker::-webkit-color-swatch {
+      border-radius: 15px;
+      border: none; }
+    .control-bar__colorpicker::-moz-color-swatch {
+      border-radius: 15px;
+      border: none; }
+  .control-bar__button {
+    background-color: #474747;
+    border: none;
+    color: white;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px; }
 
 /* ---------- SKETCH GRID ---------- */
 .sketch-grid {
@@ -84,7 +99,7 @@ body {
   grid-template-rows: repeat(16, auto); }
   .sketch-grid__square {
     border: solid 1px #414141;
-    background-color: var(--grid-color); }
+    background-color: #e7e7e7; }
     .sketch-grid__square--painted {
       background-color: black; }
 

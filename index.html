@@ -7,20 +7,18 @@
   <title>Etch-a-Sketch</title>
 </head>
 <body>
+  <header class="header">
+    <h1 class="header__title">
+      Etch-a-Sketch
+    </h1>
+  </header>
   <div class="body-wrapper">
-
-    <header class="header">
-      <h1 class="header__title">
-        Etch-a-Sketch
-      </h1>
-    </header>
-
     <div class="main-content">
       <aside class="control-bar">
         <div class="control-bar__slider-container">
           <input type="range" min="1" max="10" value="5" class="control-bar__slider" id="">
         </div>
-        <input type="color" id="control-bar__colorpicker">
+        <input type="color" class="control-bar__colorpicker" id="control-bar__colorpicker" value="#800000">
         <button class="control-bar__button">Pencil</button>
         <button class="control-bar__button">Eraser</button>
         <button class="control-bar__button">Clear</button>
