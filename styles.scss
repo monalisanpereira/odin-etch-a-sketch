@@ -1,9 +1,11 @@
 /* ---------- VARIABLES ---------- */
 
-  $text-color: #d1d1d1;
-  $dark-gray: #474747;
-  $background-color: #242424;
   $grid-color: #e7e7e7;
+  $text-color: #d1d1d1;
+  $light-gray: #8f8f8f;
+  $mid-gray: #505050;
+  $dark-gray: #393939;
+  $background-color: #242424;
 
 /* ---------- GLOBAL RULES ---------- */
 
@@ -28,7 +30,6 @@ body {
 }
   
 .body-wrapper {
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,9 +40,9 @@ body {
 
 .header {
   text-align: center;
-  margin: 30px 0;
+  margin: 30px 0 50px 0;
   &__title {
-    font-size: 48px;
+    font-size: 60px;
   }
 }
 
@@ -68,8 +69,7 @@ body {
     appearance: none;
     width: 150px;
     height: 1px;
-    background: #d3d3d3;
-    // outline: none;
+    background: $mid-gray;
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
@@ -77,16 +77,24 @@ body {
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      background: $grid-color;
+      background-color: $light-gray;
       cursor: pointer;
+
+      &:hover {
+        background-color: $text-color;
+      }
     }
 
     &::-moz-range-thumb {
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      background: $grid-color;
+      background-color: $light-gray;
       cursor: pointer;
+
+      &:hover {
+        background-color: $text-color;
+      }
     }
   }
 
@@ -113,8 +121,8 @@ body {
 
   &__button {
     background-color: $dark-gray;
+    color: $text-color;
     border: none;
-    color: white;
     height: 50px;
     width: 150px;
     text-align: center;
@@ -122,6 +130,10 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 15px;
+
+    &:hover {
+      background-color: $mid-gray;
+    }
   }
 }
 
@@ -135,7 +147,7 @@ body {
   grid-template-rows: repeat(16, auto);
 
   &__square {
-    border: solid 1px rgb(65, 65, 65);
+    border: solid 1px $dark-gray;
     background-color: $grid-color;
 
     &--painted {
@@ -155,4 +167,12 @@ footer {
   left: 0;
   height: 5vh;
   width: 100%;
+
+  a {
+    color: $text-color;
+
+    &:visited {
+      appearance: none;
+    }
+  }
 }

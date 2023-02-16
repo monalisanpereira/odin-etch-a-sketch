@@ -25,9 +25,9 @@ body {
 /* ---------- TITLE ---------- */
 .header {
   text-align: center;
-  margin: 30px 0; }
+  margin: 30px 0 50px 0; }
   .header__title {
-    font-size: 48px; }
+    font-size: 60px; }
 
 /* ---------- MAIN CONTENT ---------- */
 .main-content {
@@ -48,21 +48,25 @@ body {
     appearance: none;
     width: 150px;
     height: 1px;
-    background: #d3d3d3; }
+    background: #505050; }
     .control-bar__slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      background: #e7e7e7;
+      background-color: #8f8f8f;
       cursor: pointer; }
+      .control-bar__slider::-webkit-slider-thumb:hover {
+        background-color: #d1d1d1; }
     .control-bar__slider::-moz-range-thumb {
       width: 20px;
       height: 20px;
       border-radius: 20px;
-      background: #e7e7e7;
+      background-color: #8f8f8f;
       cursor: pointer; }
+      .control-bar__slider::-moz-range-thumb:hover {
+        background-color: #d1d1d1; }
   .control-bar__colorpicker {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -79,9 +83,9 @@ body {
       border-radius: 15px;
       border: none; }
   .control-bar__button {
-    background-color: #474747;
+    background-color: #393939;
+    color: #d1d1d1;
     border: none;
-    color: white;
     height: 50px;
     width: 150px;
     text-align: center;
@@ -89,6 +93,8 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 15px; }
+    .control-bar__button:hover {
+      background-color: #505050; }
 
 /* ---------- SKETCH GRID ---------- */
 .sketch-grid {
@@ -98,7 +104,7 @@ body {
   grid-template-columns: repeat(16, auto);
   grid-template-rows: repeat(16, auto); }
   .sketch-grid__square {
-    border: solid 1px #414141;
+    border: solid 1px #393939;
     background-color: #e7e7e7; }
     .sketch-grid__square--painted {
       background-color: black; }
@@ -113,3 +119,7 @@ footer {
   left: 0;
   height: 5vh;
   width: 100%; }
+  footer a {
+    color: #d1d1d1; }
+    footer a:visited {
+      appearance: none; }
