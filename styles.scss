@@ -145,14 +145,10 @@ body {
   display: grid;
   grid-template-columns: repeat(16, auto);
   grid-template-rows: repeat(16, auto);
+  background-color: $grid-color;
 
   &__square {
     border: solid 1px $dark-gray;
-    background-color: $grid-color;
-
-    &--painted {
-      background-color: black;
-    }
   }
 }
 
