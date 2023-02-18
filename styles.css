@@ -101,11 +101,7 @@ body {
   height: 65vh;
   width: 65vh;
   display: grid;
-  grid-template-columns: repeat(16, auto);
-  grid-template-rows: repeat(16, auto);
   background-color: #e7e7e7; }
-  .sketch-grid__square {
-    border: solid 1px #393939; }
 
 /* ---------- FOOTER ---------- */
 footer {

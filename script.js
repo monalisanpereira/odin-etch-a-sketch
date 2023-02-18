@@ -1,7 +1,9 @@
 // ---------- VARIABLES AND ELEMENTS ----------
 
 let pencilMode = 'pencil';
+let gridSquareList;
 const sketchGrid = document.getElementById('sketch-grid');
+const sizeSlider = document.getElementById('control-bar__slider');
 const colorPicker = document.getElementById('control-bar__colorpicker');
 const pencilButton = document.getElementById('control-bar__pencil-button');
 const eraserButton = document.getElementById('control-bar__eraser-button');
@@ -10,12 +12,19 @@ let chosenColor = colorPicker.value;
 
 // ---------- FUNCTIONS ----------
 
-function generateGrid() {
-  for (let i = 0; i < 16*16; i++) {
+function generateGrid(size) {
+  sketchGrid.innerHTML = '';
+
+  sketchGrid.style.gridTemplateColumns = `repeat(${size}, auto)`;
+  sketchGrid.style.gridTemplateRows = `repeat(${size}, auto)`;
+
+  for (let i = 0; i < size * size; i++) {
     const newDiv = document.createElement("div");
-    newDiv.classList.add("sketch-grid__square")
+    newDiv.classList.add("sketch-grid__square");
     sketchGrid.appendChild(newDiv);
   }
+
+  makeGridFunctional();
 }
 
 function changeMode(mode) {
@@ -28,25 +37,26 @@ function clearGrid() {
   };
 };
 
+function makeGridFunctional() {
+  gridSquareList = document.querySelectorAll('.sketch-grid__square');
+  for (let i = 0; i < gridSquareList.length; i++) {
+    gridSquareList[i].addEventListener('mouseover', ()=>{
+      if (pencilMode == 'pencil') {
+        gridSquareList[i].style.backgroundColor = chosenColor;
+      } else if (pencilMode == 'eraser') {
+        gridSquareList[i].style.backgroundColor = "transparent";
+      }
+    })
+  }
+}
+
 // ---------- FUNCTION CALLS ----------
 
-generateGrid();
-
-// ---------- NEW ELEMENTS ----------
-
-const gridSquareList = document.querySelectorAll('.sketch-grid__square');
+generateGrid(sizeSlider.value);
 
 // ---------- EVENT LISTENERS ----------
 
-for (let i = 0; i < gridSquareList.length; i++) {
-  gridSquareList[i].addEventListener('mouseover', ()=>{
-    if (pencilMode == 'pencil') {
-      gridSquareList[i].style.backgroundColor = chosenColor;
-    } else if (pencilMode == 'eraser') {
-      gridSquareList[i].style.backgroundColor = "transparent";
-    };
-  });
-};
+sizeSlider.onchange = (e) => generateGrid(e.target.value);
 
 colorPicker.addEventListener('change', (e) => {
   chosenColor = e.target.value;
