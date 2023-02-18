@@ -1,6 +1,7 @@
 // ---------- VARIABLES AND ELEMENTS ----------
 
 let pencilMode = 'pencil';
+let pencilActive = false;
 let gridSquareList;
 const sketchGrid = document.getElementById('sketch-grid');
 const sizeSlider = document.getElementById('control-bar__slider');
@@ -41,10 +42,12 @@ function makeGridFunctional() {
   gridSquareList = document.querySelectorAll('.sketch-grid__square');
   for (let i = 0; i < gridSquareList.length; i++) {
     gridSquareList[i].addEventListener('mouseover', ()=>{
-      if (pencilMode == 'pencil') {
-        gridSquareList[i].style.backgroundColor = chosenColor;
-      } else if (pencilMode == 'eraser') {
-        gridSquareList[i].style.backgroundColor = "transparent";
+      if (pencilActive == true) {
+        if (pencilMode == 'pencil') {
+          gridSquareList[i].style.backgroundColor = chosenColor;
+        } else if (pencilMode == 'eraser') {
+          gridSquareList[i].style.backgroundColor = "transparent";
+        }
       }
     })
   }
@@ -56,7 +59,17 @@ generateGrid(sizeSlider.value);
 
 // ---------- EVENT LISTENERS ----------
 
-sizeSlider.onchange = (e) => generateGrid(e.target.value);
+sketchGrid.addEventListener('mousedown', (e) => {
+  pencilActive = true;
+});
+
+sketchGrid.addEventListener('mouseup', (e) => {
+  pencilActive = false;
+});
+
+sizeSlider.addEventListener('change', (e) => {
+  generateGrid(e.target.value);
+});
 
 colorPicker.addEventListener('change', (e) => {
   chosenColor = e.target.value;
