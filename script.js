@@ -63,7 +63,7 @@ sketchGrid.addEventListener('mousedown', (e) => {
   pencilActive = true;
 });
 
-sketchGrid.addEventListener('mouseup', (e) => {
+document.addEventListener('mouseup', (e) => {
   pencilActive = false;
 });
 
