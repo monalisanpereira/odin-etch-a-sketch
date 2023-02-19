@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <title>Etch-a-Sketch</title>
 </head>
@@ -15,25 +15,21 @@
   <div class="body-wrapper">
     <div class="main-content">
       <aside class="control-bar">
-        <div class="control-bar__slider-container">
-          <input type="range" min="16" max="96" class="control-bar__slider" id="control-bar__slider"></input>
-        </div>
+        <input type="range" min="16" max="96" class="control-bar__slider" id="control-bar__slider">
         <input type="color" class="control-bar__colorpicker" id="control-bar__colorpicker" value="#800000">
         <button class="control-bar__button" id="control-bar__pencil-button">Pencil</button>
         <button class="control-bar__button" id="control-bar__eraser-button">Eraser</button>
         <button class="control-bar__button" id="control-bar__clear-button">Clear</button>
       </aside>
   
-      <div class="grid-wrapper">
-        <div id="sketch-grid" class="sketch-grid"></div>
-      </div>
+      <div id="sketch-grid" class="sketch-grid"></div>
     </div>
   </div>
 
   <footer>
-      <a href="https://github.com/monalisanpereira" target="_blank">
-        Monalisa Pereira © 2023
-      </a>
+    <a href="https://github.com/monalisanpereira" target="_blank">
+      Monalisa Pereira © 2023
+    </a>
   </footer>
 </body>
 </html>
