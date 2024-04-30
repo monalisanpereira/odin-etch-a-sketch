@@ -1,6 +1,10 @@
 # The Odin Project: Etch-a-Sketch
 
-One of the [projects](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) proposed throughout [The Odin Project](https://www.theodinproject.com/).
+One of the [learning projects](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) proposed throughout [The Odin Project](https://www.theodinproject.com/).
+
+## Status
+
+Complete ✅
 
 ## Description
 
